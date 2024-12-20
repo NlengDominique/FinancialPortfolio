@@ -1,0 +1,903 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'IBM Plex Mono', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+
+    
+}
+
+/* 1170 px */
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for all anchor links */
+}
+/* Hide Google Translate toolbar */
+
+/* Fixed Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 30px 60px; /* Adjust left and right padding as needed */
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0;
+    width: 100%; /* Ensures the navbar spans the full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for better separation */
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.logo img {
+    height: 150px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0; /* Remove any default margin */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+    width: auto;
+    background-color: white;
+}
+.nav-links .nav-link.active {
+    color: #0693e3; /* Change to your preferred color */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+.nav-links.nav-active {
+    max-height: 300px; /* Adjust based on the number of links */
+    opacity: 1;
+    background-color: #ffffff;
+    
+}
+.nav-links li {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------- dropdown menu ------------- */
+ 
+/* Dropdown container */
+.dropdown {
+    display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ----------- en dropdown -------------- */
+
+
+.nav-links a:hover {
+    color: #0693e3;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Hero section styles */
+.hero {
+    position: relative;
+    margin-top: 100px; /* Add margin to account for the fixed navbar height */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background color */
+    background-image: url('img/scale_img_about_me.png');
+    background-size: cover;
+    background-position: center 50px; /* Push image down */
+    background-repeat: no-repeat;
+    background-blend-mode: multiply; /* Blend the background color with the image */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+/* Hero content styling */
+.hero {
+    margin-top: 100px; /* Add margin to account for the fixed navbar height */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background color */
+    background-image: url('img/scale_img_about_me.png');
+    background-size: cover;
+    background-position: 1px 50px; /* Push image down */
+    background-repeat: no-repeat;
+ 
+}
+/* Hero content styling */
+.hero-content {
+    position: relative;
+    width: 40%; /* Set width to 60% of the hero section */
+    max-width: 800px; /* Set a maximum width to prevent it from becoming too wide */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; 
+    gap: 0;
+}
+.hero h1 {
+    font-size: 50px; /* Adjust as needed */
+    margin-bottom: 5px; /* Remove default margin */
+}
+.typing-container {
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #0693e3; /* Text color */
+    height: 50px; /* Height for the container */
+    display: flex;
+    align-items: center; 
+    border-right: 2px solid #0693e3; /* Blinking cursor */
+    animation: blink-caret 0.7s step-end infinite; /* Blinking caret effect */
+    line-height: 50px;
+}
+
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        background-color: transparent;
+    }
+    50% {
+       
+    }
+}
+/* Text select simulation */
+.selected-text {
+    background-color: #333; /* Background color when "selected" */
+    color: #0693e3; /* Text color change when "selected" */
+    display: inline; /* Ensure the background color fits the text width */  
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 70px 120px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+.info-heading{
+    text-align:center;
+    font-size: 35px;
+}
+.info-paragraph{
+    padding-left: 120px;
+    padding-right: 100px;
+}
+
+/* Centered Title and Description */
+.services-info {
+    max-width: 1200px; /* Match the width of the navbar */
+    margin: 0 auto; /* Center align */
+    text-align: center; /* Center align text */
+    padding: 0 20px; /* Padding for spacing */
+    box-sizing: border-box;
+}
+
+.services-title {
+    font-size: 36px; /* Title font size */
+    color: #333; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.services-description {
+    font-size: 18px; /* Description font size */
+    color: #666; /* Description color */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Space below the description */
+}
+
+/* Services Container Styles */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.service-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+   /*  background-color: #f4f4f4; */
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+.service-item svg{
+    width: 50px;
+}
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+.cta-container {
+    text-align: center; /* Center align the button */
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color for the CTA section */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0693e3; /* Background color */
+    color: #fff; /* Text color */
+    font-size: 18px; /* Font size */
+    padding: 15px 35px; /* Padding for the button */
+    border-radius: none; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.cta-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+/* Partners Section Styles */
+.partners-section {
+    padding: 70px 120px; /* Padding for top/bottom and left/right */
+    text-align: center; /* Center align text */
+    background-color: #f9f9f9; /* Light background color for contrast */
+}
+
+.partners-container {
+    display: block; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Space between images (adjust as needed) */
+    justify-content: center; /* Center align grid items */
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.partner-logo {
+    max-width: 10%; /* Ensure logos are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border: none; /* Optional border around logos */
+    border-radius: none; /* Optional rounded corners */
+    padding: 10px; /* Optional padding inside the border */
+    background-color: none; /* Background color inside the border */
+}
+
+/* History Section Styles */
+.history-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-color:rgba(51, 51, 51, 0.5);
+    background-image: url('img/img_about_me_2.png'); /* Replace with your background image */
+    background-size: cover; /* Ensure the image covers the section */
+    background-position: right center; /* Focus on the right side where the person is */
+    background-repeat: no-repeat; /* Prevent repeating */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px; /* Padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.history-content {
+    display: flex;
+    align-items: center; /* Align items in the center vertically */
+    justify-content: center; /* Center items horizontally */
+    max-width: 1200px; /* Maximum width of the content */
+    width: 100%; /* Full width of the section */
+    text-align: center; /* Center align text */
+    
+    padding: 40px; /* Padding around the content */
+   
+    z-index: 1; /* Ensure content is above background image */
+    margin-right: 20%; /* Push the content to the left by adjusting the right margin */
+}
+.text-container {
+    max-width: 600px; /* Maximum width of the text container */
+}
+
+.history-heading {
+    font-size: 36px; /* Heading font size */
+    color: #333; /* Heading color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.history-paragraph {
+    font-size: 18px; /* Paragraph font size */
+    color: #ffffff; /* Paragraph color */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.history-button {
+    display: inline-block;
+    background-color: #0693e3; /* Background color for the button */
+    color: #fff; /* Text color for the button */
+    font-size: 18px; /* Font size for the button */
+    padding: 15px 35px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.history-button:hover {
+    box-shadow: 8px 8px #000;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    animation: fadeIn 0.5s; /* Fade-in effect */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Adjusted for more top margin */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Increased max width for larger modal */
+    transition: all 0.3s ease; 
+    border-radius: 8px; /* Optional: rounded corners */
+    transform: translateY(-30px); /* Initial position for transition */
+    transition: transform 0.5s ease; /* Smooth transition */
+    
+}
+.input-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: space-between; /* Space items evenly */
+    margin-bottom: 20px; /* Spacing below the input fields */
+}
+
+.input-group {
+    width: 48%; /* Each input group takes up about half the width */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.modal.show .modal-content {
+    transform: translateY(0); /* Slide into view */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-content input, textarea {
+    width: 100%; /* Full width for input and textarea */
+    margin-bottom: 10px; /* Space below each input */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.btn-hist {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-hist:hover {
+    background-color: #0056b3; 
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Counter Section Styles */
+.counter-section {
+    padding: 70px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.counter-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.counter-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.counter-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.counters-container {
+    display: flex;
+    justify-content: center; /* Center align the counters */
+    flex-wrap: wrap;
+    gap: 10px; /* Small gap between counter items */
+    margin-bottom: 30px;
+}
+
+.counter-item {
+    flex: 1 1 200px; /* Flex-grow and flex-shrink values adjusted */
+    max-width: 230px; /* Adjusted max-width for better alignment */
+    padding: 15px; /* Reduced padding for more compact look */
+    
+    display: flex; /* Added to align contents */
+    flex-direction: column;
+    align-items: center; /* Center align items vertically */
+    text-align: center; /* Ensure text is centered */
+}
+
+.counter-number {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevent line break */
+    overflow: hidden; /* Ensure no overflow */
+    text-overflow: ellipsis; /* Ellipsis if text is too long */
+}
+
+.counter-name {
+    font-size: 16px;
+    color: #666;
+}
+
+.counter-button {
+    display: inline-block;
+    background-color: #0693e3;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.counter-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+
+.testimonial-section {
+    padding: 70px 20px;
+    /* background: url('img/back3.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Ensure the image covers the section */
+    padding: 0 20px;
+    background-color: rgba(0, 150, 136, 0.8);
+    background-blend-mode: multiply; /* Blend mode to darken background */
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for slider */
+}
+
+.testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+}
+
+.testimonial-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonial-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff; /* Gold color */
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating i {
+    color: #FFD54F; /* Gold color for stars */
+    font-size: 24px;
+}
+
+.testimonial-line {
+    border: 0;
+    border-top: 2px solid #333; /* Gold line */
+    margin: 20px auto;
+    width: 50%;
+}
+
+.testimonial-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.testimonial-number {
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #fff; /* Gold color */
+}
+
+.testimonial-button {
+    display: inline-block;
+    background-color: #0693e3;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.testimonial-button:hover {
+    box-shadow: 8px 8px #000;
+}
+
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure slider buttons are on top */
+}
+
+.slider-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Ensure only one slide is shown at a time */
+.testimonial-slide {
+    display: none; /* Hide slides by default */
+}
+
+/* Show the current slide */
+.testimonial-slide.active {
+    display: block;
+}
+
+/* contact section */
+.contact-section {
+    padding: 70px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #0693e3;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#formMessage {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #d9534f;
+    text-align: center;
+}
+
+/* footer page */
+.footer-section {
+    padding: 70px 20px;
+    background-color: #333;
+    text-align: center;
+    border-bottom: 1px #0693e3;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    mix-blend-mode:color-burn;
+}
+
+.footer-description {
+    letter-spacing: 1.2px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #0693e3;
+}
+
+.footer-text {
+    font-size: 18px;
+    display: inline-block; /* Ensure text aligns with icons */
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Small gap between social icons */
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #0693e3; /* Color change on hover */
+}
+
+/*responsive design*/
+
+@media(max-width:432px){
+
+    .logo img{
+        height: 90px;
+        margin: 0;
+    
+    }
+
+    .nav-links{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+    .hero{
+        height: 60vh;
+    }
+    .hero-content h1{
+        font-size:24px ;
+      justify-content: center;
+    }
+    .info-section{
+        padding: 6px;
+        
+    }
+    .info-heading{
+        text-align:center;
+        font-size:18px
+    }
+    .info-paragraph{
+       padding: 8px;
+       text-align: justify;
+       font-size: 14px
+
+    }
+    .services-container{
+        gap: 0;
+      }
+    .service-item svg{
+        height: 90px
+    }
+    .service-description{
+
+        font-size: 14px;
+    }
+    .history-section{
+        padding: 0;
+        background-image: none;
+        height: 90vh;
+    }
+    .history-content{
+        margin: 0;
+    }
+    .history-heading{
+        font-size: 18px;
+    }
+   .history-paragraph{
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 4px;
+    text-align: justify;
+    
+   }
+   .history-button{
+        padding: 7px;
+        text-align: center;
+        margin-top: 12px;
+        font-size: 14px;
+        
+   }
+   .partners-section{
+    padding: 10px;
+   }
+   .testimonial-title{
+    font-size: 16px;
+   }
+   .contact-section{
+    padding: 5px;
+   }
+   .contact-section > h2{
+    font-size: medium;
+   }
+   .form-group input,.form-group textarea {
+    width: 70%;
+   }
+   .btn{
+    width: 70%;
+   }
+   .footer-description{
+    font-size: 14px;
+}
+
+    .footer-details .footer-text{
+        font-size: 14px;
+    }
+    .footer-social .social-icon{
+      font-size: 14px;
+
+}}

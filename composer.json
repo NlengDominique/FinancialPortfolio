@@ -1,0 +1,15 @@
+{
+    "name": "yvanie/website-jocelyn",
+    "autoload": {
+        "psr-4": {
+            "Yvanie\\WebsiteJocelyn\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nwouatou Yvanie Noelle",
+            "email": "nwouatouyvanienoelle@gmail.com"
+        }
+    ],
+    "require": {}
+}
