@@ -1,12 +1,4 @@
 /vendor/
-index_en.html
- ._send_email.php 
- ._send_appointment.php 
- ._script.js ._PHPMailer 
- ._index.html 
- ._index_en.html 
- ._index_de.html 
- ._img 
- ._composer.json 
- ._.gitignore 
- ._.gitattributes
+.gitattributes
+.gitignore
+PHPMailer
